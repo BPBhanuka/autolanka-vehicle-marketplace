@@ -1,14 +1,208 @@
-export type Vehicle = { id:string; title:string; category:string; make:string; model:string; year:number; price:number; mileage:number; fuel:string; transmission:string; location:string; image:string; featured?:boolean; condition:string; engine:string; description:string; seller:string; phone:string };
-// Vehicle photos are served from Unsplash's public image CDN for this demo. Replace with locally licensed listing photos for production.
+export type Vehicle = {
+  id: string;
+  title: string;
+  category: string;
+  make: string;
+  model: string;
+  year: number;
+  price: number;
+  mileage: number;
+  fuel: string;
+  transmission: string;
+  location: string;
+  imageIndex: number;
+  imageAlt: string;
+  featured?: boolean;
+  condition: string;
+  engine: string;
+  description: string;
+  seller: string;
+};
+
+// Vehicle photos are illustrative AI-generated sample images, not photographs of verified listings.
 export const vehicles: Vehicle[] = [
- {id:"toyota-aqua-2017",title:"Toyota Aqua S",category:"Cars",make:"Toyota",model:"Aqua S",year:2017,price:8950000,mileage:78000,fuel:"Hybrid",transmission:"Automatic",location:"Colombo 05",image:"https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1100&q=85&fit=crop",featured:true,condition:"Used",engine:"1,500 cc",description:"Well maintained hybrid hatchback with comfortable seating, smooth city performance and an economical drive. Viewing can be arranged with the seller.",seller:"Kasun Perera",phone:"077 123 4567"},
- {id:"toyota-raize-2022",title:"Toyota Raize Z",category:"SUVs",make:"Toyota",model:"Raize Z",year:2022,price:15900000,mileage:24500,fuel:"Petrol",transmission:"Automatic",location:"Gampaha",image:"https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=1100&q=85&fit=crop",featured:true,condition:"Used",engine:"1,000 cc",description:"Modern compact SUV with a spacious cabin, useful safety features and low mileage.",seller:"Nimal Fernando",phone:"071 222 3344"},
- {id:"honda-dio-2022",title:"Honda Dio",category:"Motorcycles",make:"Honda",model:"Dio",year:2022,price:585000,mileage:8200,fuel:"Petrol",transmission:"Automatic",location:"Matara",image:"https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=1100&q=85&fit=crop",featured:true,condition:"Used",engine:"110 cc",description:"Easy-to-ride scooter, ideal for daily commuting. Good running condition.",seller:"Tharindu Silva",phone:"076 555 1234"},
- {id:"suzuki-every-2020",title:"Suzuki Every",category:"Vans",make:"Suzuki",model:"Every",year:2020,price:7250000,mileage:49000,fuel:"Petrol",transmission:"Automatic",location:"Kandy",image:"https://images.unsplash.com/photo-1566933293069-b55c7f326dd4?w=1100&q=85&fit=crop",featured:true,condition:"Used",engine:"660 cc",description:"Practical compact van with flexible seating and useful cargo space.",seller:"Ruwan Jayasuriya",phone:"075 444 9876"},
- {id:"honda-fit-2018",title:"Honda Fit GP5",category:"Cars",make:"Honda",model:"Fit GP5",year:2018,price:9650000,mileage:62000,fuel:"Hybrid",transmission:"Automatic",location:"Negombo",image:"https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1100&q=85&fit=crop",condition:"Used",engine:"1,500 cc",description:"Comfortable and efficient hatchback with a practical interior.",seller:"Amila Perera",phone:"077 999 1234"},
- {id:"yamaha-fz-2021",title:"Yamaha FZ",category:"Motorcycles",make:"Yamaha",model:"FZ",year:2021,price:790000,mileage:19000,fuel:"Petrol",transmission:"Manual",location:"Kurunegala",image:"https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=1100&q=85&fit=crop",condition:"Used",engine:"150 cc",description:"Well kept commuter motorcycle with a comfortable riding position.",seller:"Dilan Kumara",phone:"070 888 7777"},
- {id:"nissan-van-2019",title:"Nissan Caravan",category:"Vans",make:"Nissan",model:"Caravan",year:2019,price:12800000,mileage:86000,fuel:"Diesel",transmission:"Automatic",location:"Kurunegala",image:"https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=1100&q=85&fit=crop",condition:"Used",engine:"2,500 cc",description:"Spacious passenger van, suitable for family and business use.",seller:"Sanjeewa",phone:"072 123 9000"},
- {id:"suzuki-wagon-r-2021",title:"Suzuki Wagon R",category:"Cars",make:"Suzuki",model:"Wagon R",year:2021,price:6850000,mileage:39000,fuel:"Hybrid",transmission:"Automatic",location:"Panadura",image:"https://images.unsplash.com/photo-1542362567-b07e54358753?w=1100&q=85&fit=crop",condition:"Used",engine:"660 cc",description:"Compact city car with a roomy cabin and economical fuel consumption.",seller:"Ishara",phone:"077 222 8800"}
+  {
+    id: "toyota-aqua-2017",
+    title: "Toyota Aqua S",
+    category: "Cars",
+    make: "Toyota",
+    model: "Aqua S",
+    year: 2017,
+    price: 8950000,
+    mileage: 78000,
+    fuel: "Hybrid",
+    transmission: "Automatic",
+    location: "Colombo 05",
+    imageIndex: 0,
+    imageAlt: "Illustrative white compact hatchback for the Toyota Aqua S sample listing",
+    featured: true,
+    condition: "Used",
+    engine: "1,500 cc",
+    description: "Sample listing description for a compact hybrid hatchback. Vehicle condition, service history and specifications have not been independently verified.",
+    seller: "Demo seller"
+  },
+  {
+    id: "toyota-raize-2022",
+    title: "Toyota Raize Z",
+    category: "SUVs",
+    make: "Toyota",
+    model: "Raize Z",
+    year: 2022,
+    price: 15900000,
+    mileage: 24500,
+    fuel: "Petrol",
+    transmission: "Automatic",
+    location: "Gampaha",
+    imageIndex: 1,
+    imageAlt: "Illustrative white compact SUV for the Toyota Raize Z sample listing",
+    featured: true,
+    condition: "Used",
+    engine: "1,000 cc",
+    description: "Sample listing description for a compact SUV. Vehicle condition, service history and specifications have not been independently verified.",
+    seller: "Demo seller"
+  },
+  {
+    id: "honda-dio-2022",
+    title: "Honda Dio",
+    category: "Motorcycles",
+    make: "Honda",
+    model: "Dio",
+    year: 2022,
+    price: 585000,
+    mileage: 8200,
+    fuel: "Petrol",
+    transmission: "Automatic",
+    location: "Matara",
+    imageIndex: 2,
+    imageAlt: "Illustrative white automatic scooter for the Honda Dio sample listing",
+    featured: true,
+    condition: "Used",
+    engine: "110 cc",
+    description: "Sample listing description for an automatic scooter. Vehicle condition, service history and specifications have not been independently verified.",
+    seller: "Demo seller"
+  },
+  {
+    id: "suzuki-every-2020",
+    title: "Suzuki Every",
+    category: "Vans",
+    make: "Suzuki",
+    model: "Every",
+    year: 2020,
+    price: 7250000,
+    mileage: 49000,
+    fuel: "Petrol",
+    transmission: "Automatic",
+    location: "Kandy",
+    imageIndex: 3,
+    imageAlt: "Illustrative clean white compact passenger van for the Suzuki Every sample listing",
+    featured: true,
+    condition: "Used",
+    engine: "660 cc",
+    description: "Sample listing description for a compact passenger van. Vehicle condition, service history and specifications have not been independently verified.",
+    seller: "Demo seller"
+  },
+  {
+    id: "honda-fit-2018",
+    title: "Honda Fit GP5",
+    category: "Cars",
+    make: "Honda",
+    model: "Fit GP5",
+    year: 2018,
+    price: 9650000,
+    mileage: 62000,
+    fuel: "Hybrid",
+    transmission: "Automatic",
+    location: "Negombo",
+    imageIndex: 4,
+    imageAlt: "Illustrative white compact hatchback for the Honda Fit GP5 sample listing",
+    condition: "Used",
+    engine: "1,500 cc",
+    description: "Sample listing description for a compact hybrid hatchback. Vehicle condition, service history and specifications have not been independently verified.",
+    seller: "Demo seller"
+  },
+  {
+    id: "yamaha-fz-2021",
+    title: "Yamaha FZ",
+    category: "Motorcycles",
+    make: "Yamaha",
+    model: "FZ",
+    year: 2021,
+    price: 790000,
+    mileage: 19000,
+    fuel: "Petrol",
+    transmission: "Manual",
+    location: "Kurunegala",
+    imageIndex: 5,
+    imageAlt: "Illustrative black commuter motorcycle for the Yamaha FZ sample listing",
+    condition: "Used",
+    engine: "150 cc",
+    description: "Sample listing description for a commuter motorcycle. Vehicle condition, service history and specifications have not been independently verified.",
+    seller: "Demo seller"
+  },
+  {
+    id: "nissan-van-2019",
+    title: "Nissan Caravan",
+    category: "Vans",
+    make: "Nissan",
+    model: "Caravan",
+    year: 2019,
+    price: 12800000,
+    mileage: 86000,
+    fuel: "Diesel",
+    transmission: "Automatic",
+    location: "Kurunegala",
+    imageIndex: 6,
+    imageAlt: "Illustrative white passenger van for the Nissan Caravan sample listing",
+    condition: "Used",
+    engine: "2,500 cc",
+    description: "Sample listing description for a passenger van. Vehicle condition, service history and specifications have not been independently verified.",
+    seller: "Demo seller"
+  },
+  {
+    id: "suzuki-wagon-r-2021",
+    title: "Suzuki Wagon R",
+    category: "Cars",
+    make: "Suzuki",
+    model: "Wagon R",
+    year: 2021,
+    price: 6850000,
+    mileage: 39000,
+    fuel: "Hybrid",
+    transmission: "Automatic",
+    location: "Panadura",
+    imageIndex: 7,
+    imageAlt: "Illustrative white tall compact hatchback for the Suzuki Wagon R sample listing",
+    condition: "Used",
+    engine: "660 cc",
+    description: "Sample listing description for a compact city car. Vehicle condition, service history and specifications have not been independently verified.",
+    seller: "Demo seller"
+  }
 ];
-export const categories = ["All vehicles","Cars","SUVs","Vans","Motorcycles","Three Wheelers","Trucks"];
-export const money = (n:number) => `Rs. ${n.toLocaleString("en-LK")}`;
+
+export const categories = [
+  "All vehicles",
+  "Cars",
+  "SUVs",
+  "Vans",
+  "Motorcycles",
+  "Three Wheelers",
+  "Trucks"
+];
+
+const spritePositions = [
+  "0% 0%",
+  "100% 0%",
+  "0% 33.3333%",
+  "100% 33.3333%",
+  "0% 66.6667%",
+  "100% 66.6667%",
+  "0% 100%",
+  "100% 100%"
+];
+
+export function getVehicleImagePosition(index: number): string {
+  return spritePositions[index] ?? "0% 0%";
+}
+
+export const money = (amount: number) =>
+  `Rs. ${new Intl.NumberFormat("en-LK", { maximumFractionDigits: 0 }).format(amount)}`;
