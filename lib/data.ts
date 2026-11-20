@@ -19,7 +19,7 @@ export type Vehicle = {
   seller: string;
 };
 
-// Vehicle photos are illustrative AI-generated sample images, not photographs of verified listings.
+// Illustrative images and vehicle details are used for this frontend portfolio concept.
 export const vehicles: Vehicle[] = [
   {
     id: "toyota-aqua-2017",
@@ -34,11 +34,11 @@ export const vehicles: Vehicle[] = [
     transmission: "Automatic",
     location: "Colombo 05",
     imageIndex: 0,
-    imageAlt: "Illustrative white compact hatchback for the Toyota Aqua S sample listing",
+    imageAlt: "Illustrative white compact hatchback for the Toyota Aqua S listing",
     featured: true,
     condition: "Used",
     engine: "1,500 cc",
-    description: "Sample listing description for a compact hybrid hatchback. Vehicle condition, service history and specifications have not been independently verified.",
+    description: "A compact hybrid hatchback with a practical cabin, easy city handling and an efficient everyday driving style. Its small footprint makes it a convenient option for navigating busy streets and fitting into tighter parking spaces.",
     seller: "Demo seller"
   },
   {
@@ -54,11 +54,11 @@ export const vehicles: Vehicle[] = [
     transmission: "Automatic",
     location: "Gampaha",
     imageIndex: 1,
-    imageAlt: "Illustrative white compact SUV for the Toyota Raize Z sample listing",
+    imageAlt: "Illustrative white compact SUV for the Toyota Raize Z listing",
     featured: true,
     condition: "Used",
     engine: "1,000 cc",
-    description: "Sample listing description for a compact SUV. Vehicle condition, service history and specifications have not been independently verified.",
+    description: "A compact SUV with a raised driving position, versatile cabin and city-friendly dimensions. The practical layout makes it suitable for everyday journeys as well as relaxed weekend travel.",
     seller: "Demo seller"
   },
   {
@@ -74,11 +74,11 @@ export const vehicles: Vehicle[] = [
     transmission: "Automatic",
     location: "Matara",
     imageIndex: 2,
-    imageAlt: "Illustrative white automatic scooter for the Honda Dio sample listing",
+    imageAlt: "Illustrative white automatic scooter for the Honda Dio listing",
     featured: true,
     condition: "Used",
     engine: "110 cc",
-    description: "Sample listing description for an automatic scooter. Vehicle condition, service history and specifications have not been independently verified.",
+    description: "A lightweight automatic scooter designed for simple day-to-day commuting. Its step-through design and easy-to-manage size make short town journeys convenient.",
     seller: "Demo seller"
   },
   {
@@ -94,11 +94,11 @@ export const vehicles: Vehicle[] = [
     transmission: "Automatic",
     location: "Kandy",
     imageIndex: 3,
-    imageAlt: "Illustrative clean white compact passenger van for the Suzuki Every sample listing",
+    imageAlt: "Illustrative clean white compact passenger van for the Suzuki Every listing",
     featured: true,
     condition: "Used",
     engine: "660 cc",
-    description: "Sample listing description for a compact passenger van. Vehicle condition, service history and specifications have not been independently verified.",
+    description: "A compact passenger van with a tall cabin, sliding side doors and flexible interior space. Its practical shape is useful for family travel, town errands and carrying everyday cargo.",
     seller: "Demo seller"
   },
   {
@@ -114,10 +114,10 @@ export const vehicles: Vehicle[] = [
     transmission: "Automatic",
     location: "Negombo",
     imageIndex: 4,
-    imageAlt: "Illustrative white compact hatchback for the Honda Fit GP5 sample listing",
+    imageAlt: "Illustrative white compact hatchback for the Honda Fit GP5 listing",
     condition: "Used",
     engine: "1,500 cc",
-    description: "Sample listing description for a compact hybrid hatchback. Vehicle condition, service history and specifications have not been independently verified.",
+    description: "A versatile hatchback with a flexible cabin layout and compact exterior dimensions. The hybrid powertrain makes it an appealing option for regular city and suburban driving.",
     seller: "Demo seller"
   },
   {
@@ -133,10 +133,10 @@ export const vehicles: Vehicle[] = [
     transmission: "Manual",
     location: "Kurunegala",
     imageIndex: 5,
-    imageAlt: "Illustrative black commuter motorcycle for the Yamaha FZ sample listing",
+    imageAlt: "Illustrative black commuter motorcycle for the Yamaha FZ listing",
     condition: "Used",
     engine: "150 cc",
-    description: "Sample listing description for a commuter motorcycle. Vehicle condition, service history and specifications have not been independently verified.",
+    description: "A street-style commuter motorcycle with an upright riding position and a purposeful design. It is suited to everyday rides around town and regular longer commutes.",
     seller: "Demo seller"
   },
   {
@@ -152,10 +152,10 @@ export const vehicles: Vehicle[] = [
     transmission: "Automatic",
     location: "Kurunegala",
     imageIndex: 6,
-    imageAlt: "Illustrative white passenger van for the Nissan Caravan sample listing",
+    imageAlt: "Illustrative white passenger van for the Nissan Caravan listing",
     condition: "Used",
     engine: "2,500 cc",
-    description: "Sample listing description for a passenger van. Vehicle condition, service history and specifications have not been independently verified.",
+    description: "A spacious passenger van with generous cabin room and a practical layout for group journeys. Its larger body style also offers flexibility for travel and business-related transport.",
     seller: "Demo seller"
   },
   {
@@ -171,10 +171,10 @@ export const vehicles: Vehicle[] = [
     transmission: "Automatic",
     location: "Panadura",
     imageIndex: 7,
-    imageAlt: "Illustrative white tall compact hatchback for the Suzuki Wagon R sample listing",
+    imageAlt: "Illustrative white tall compact hatchback for the Suzuki Wagon R listing",
     condition: "Used",
     engine: "660 cc",
-    description: "Sample listing description for a compact city car. Vehicle condition, service history and specifications have not been independently verified.",
+    description: "A tall, compact hatchback with a roomy feel inside and a small footprint outside. The upright design makes it a practical choice for city driving and everyday errands.",
     seller: "Demo seller"
   }
 ];
@@ -188,21 +188,6 @@ export const categories = [
   "Three Wheelers",
   "Trucks"
 ];
-
-const spritePositions = [
-  "0% 0%",
-  "100% 0%",
-  "0% 33.3333%",
-  "100% 33.3333%",
-  "0% 66.6667%",
-  "100% 66.6667%",
-  "0% 100%",
-  "100% 100%"
-];
-
-export function getVehicleImagePosition(index: number): string {
-  return spritePositions[index] ?? "0% 0%";
-}
 
 export const money = (amount: number) =>
   `Rs. ${new Intl.NumberFormat("en-LK", { maximumFractionDigits: 0 }).format(amount)}`;
