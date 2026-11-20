@@ -28,4 +28,24 @@
 .demo-safety-note { color:#a56b19; }
 .demo-safety-note b { color:#604516; }
 .demo-safety-note p { color:#766347; }
-@media(max-width:760px) { .vehicle-image,.detail-main-image { aspect-ratio:3/2; } .photo-preview-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+
+/* Keep the hero calls-to-action clear of the search panel on desktop and tablet. */
+@media (min-width: 761px) {
+  .hero-content {
+    top: 14%;
+    max-width: 760px;
+  }
+
+  .hero h1 {
+    max-width: 760px;
+  }
+
+  .search-panel {
+    bottom: 14px;
+  }
+}
+
+@media(max-width:760px) {
+  .vehicle-image,.detail-main-image { aspect-ratio:3/2; }
+  .photo-preview-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+}
