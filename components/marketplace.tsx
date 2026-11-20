@@ -30,11 +30,11 @@ export function Header() {
 
 export function Footer() {
   return <footer className="footer"><div className="container footer-grid">
-    <div><Link href="/" className="brand footer-brand"><span className="brand-mark"><CarFront size={22} /></span><span>Auto<span>Lanka</span><small>FIND YOUR NEXT RIDE</small></span></Link><p>Find your next ride with confidence.</p></div>
+    <div><Link href="/" className="brand footer-brand"><span className="brand-mark"><CarFront size={22} /></span><span>Auto<span>Lanka</span><small>FIND YOUR NEXT RIDE</small></span></Link><p>Your next journey starts with the right vehicle.</p></div>
     <div><b>Explore</b><Link href="/vehicles">Browse vehicles</Link><Link href="/vehicles?category=Cars">Cars</Link><Link href="/vehicles?category=Vans">Vans</Link><Link href="/vehicles?category=Motorcycles">Motorcycles</Link></div>
     <div><b>For sellers</b><Link href="/sell">Sell your vehicle</Link><Link href="/saved">Saved vehicles</Link><Link href="/contact">Contact us</Link></div>
     <div><b>AutoLanka</b><Link href="/about">About us</Link><Link href="/contact">Help & support</Link><span>Sri Lanka</span></div>
-  </div><div className="container footer-bottom">© 2026 AutoLanka. Frontend marketplace concept.</div></footer>;
+  </div><div className="container footer-bottom">© 2026 AutoLanka. All rights reserved.</div></footer>;
 }
 
 export function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
@@ -111,8 +111,8 @@ export function BrowseClient({initialCategory="All vehicles",initialQuery="",ini
       <label>Max price (LKR)<input type="number" min="0" value={max} onChange={(e)=>setMax(e.target.value)} placeholder="No limit"/></label>
       <button className="text-button" type="button" onClick={clear}>Clear filters</button>
     </div>}
-    <div className="results-line"><b>{filteredVehicles.length} sample vehicles found</b><span>Illustrative demo listings · not live inventory</span></div>
-    {filteredVehicles.length>0?<div className="vehicle-grid">{filteredVehicles.map((v)=><VehicleCard key={v.id} vehicle={v}/>)}</div>:<div className="empty-state"><CarFront size={36}/><h3>No sample vehicles found</h3><p>Try another keyword, category, location or price range.</p><button className="btn btn-outline" type="button" onClick={clear}>Reset search</button></div>}
+    <div className="results-line"><b>{filteredVehicles.length} vehicles found</b><span>Browse by make, category, location and budget</span></div>
+    {filteredVehicles.length>0?<div className="vehicle-grid">{filteredVehicles.map((v)=><VehicleCard key={v.id} vehicle={v}/>)}</div>:<div className="empty-state"><CarFront size={36}/><h3>No vehicles found</h3><p>Try another keyword, category, location or price range.</p><button className="btn btn-outline" type="button" onClick={clear}>Reset search</button></div>}
   </>;
 }
 

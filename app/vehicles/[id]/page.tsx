@@ -74,10 +74,10 @@ export default async function VehicleDetails({
 
           <div className="detail-panel seller-panel">
             <h3>Seller information</h3>
-            <b>Demo seller</b>
-            <small>Seller contact details are not available for this listing.</small>
-            <Link href="/contact" className="btn btn-outline full-btn">
-              View contact page
+            <b>{vehicle.seller}</b>
+            <small>{vehicle.sellerRole} · Based in {vehicle.location}</small>
+            <Link href="/contact" className="btn btn-primary full-btn">
+              Send an inquiry
             </Link>
           </div>
         </aside>

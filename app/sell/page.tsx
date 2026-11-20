@@ -5,7 +5,7 @@ import {Camera,CheckCircle2,ChevronRight,ImagePlus} from "lucide-react";
 import {money} from "@/lib/data";
 const MAX_PHOTOS=8,MAX_SIZE=5*1024*1024,CURRENT_YEAR=new Date().getFullYear();
 export default function SellPage(){
- const [submitted,setSubmitted]=useState(false);const [photos,setPhotos]=useState<File[]>([]);const [urls,setUrls]=useState<string[]>([]);const [error,setError]=useState("");const [preview,setPreview]=useState<{title:string;year:string;price:string;district:string}|null>(null);const urlsRef=useRef<string[]>([]);
+ const [submitted,setSubmitted]=useState(false);const [photos,setPhotos]=useState<File[]>([]);const [urls,setUrls]=useState<string[]>([]);const [error,setError]=useState("");const [preview,setPreview]=useState<{title:string;year:string;price:string;district:string;seller:string}|null>(null);const urlsRef=useRef<string[]>([]);
  useEffect(()=>()=>urlsRef.current.forEach((url)=>URL.revokeObjectURL(url)),[]);
  const changePhotos=(e:ChangeEvent<HTMLInputElement>)=>{
   const files=Array.from(e.currentTarget.files??[]);
@@ -14,10 +14,10 @@ export default function SellPage(){
   if(files.some(f=>f.size>MAX_SIZE)){setError("Each image must be 5 MB or smaller.");e.currentTarget.value="";return;}
   urlsRef.current.forEach((url)=>URL.revokeObjectURL(url));const next=files.map((file)=>URL.createObjectURL(file));urlsRef.current=next;setPhotos(files);setUrls(next);setError("");
  };
- const submit=(e:FormEvent<HTMLFormElement>)=>{e.preventDefault();const d=new FormData(e.currentTarget);const price=Number(d.get("price"));if(!Number.isFinite(price)||price<=0)return;setPreview({title:`${d.get("make")} ${d.get("model")}`,year:String(d.get("year")),price:money(price),district:String(d.get("district"))});setSubmitted(true);};
- return <section className="page-section container narrow"><div className="page-heading"><span className="eyebrow">FOR PRIVATE & BUSINESS SELLERS</span><h1>Sell your vehicle</h1><p>Prepare a sample listing and preview the form experience.</p></div>
- {submitted&&preview?<div className="success-card listing-preview-card"><CheckCircle2 size={42}/><h2>Your listing preview is ready</h2><div className="listing-preview-summary"><b>{preview.year} {preview.title}</b><strong>{preview.price}</strong><span>{preview.district}, Sri Lanka · {photos.length} photo(s) selected</span></div><p>This frontend-only preview has not been published or stored on a server.</p><button className="btn btn-primary" type="button" onClick={()=>setSubmitted(false)}>Back to form</button></div>:<form className="form-card" onSubmit={submit}>
- <div className="form-step"><b>01</b><span>Vehicle details</span><i/><b>02</b><span>Photos</span><i/><b>03</b><span>Seller info</span></div><h2>Vehicle information</h2><div className="form-grid">
+ const submit=(e:FormEvent<HTMLFormElement>)=>{e.preventDefault();const d=new FormData(e.currentTarget);const price=Number(d.get("price"));if(!Number.isFinite(price)||price<=0)return;setPreview({title:`${d.get("make")} ${d.get("model")}`,year:String(d.get("year")),price:money(price),district:String(d.get("district")),seller:String(d.get("sellerName"))});setSubmitted(true);};
+ return <section className="page-section container narrow"><div className="page-heading"><span className="eyebrow">FOR PRIVATE & BUSINESS SELLERS</span><h1>Sell your vehicle</h1><p>Create a detailed vehicle listing and prepare it for buyers.</p></div>
+ {submitted&&preview?<div className="success-card listing-preview-card"><CheckCircle2 size={42}/><h2>Your listing preview is ready</h2><div className="listing-preview-summary"><b>{preview.year} {preview.title}</b><strong>{preview.price}</strong><span>{preview.seller} · {preview.district}, Sri Lanka · {photos.length} photo(s) selected</span></div><p>Review your vehicle details and photos before publishing. Online listing submission will be available when seller services are connected.</p><button className="btn btn-primary" type="button" onClick={()=>setSubmitted(false)}>Back to form</button></div>:<form className="form-card" onSubmit={submit}>
+ <div className="form-step"><b>01</b><span>Vehicle details</span><i/><b>02</b><span>Photos</span><i/><b>03</b><span>Seller information</span></div><h2>Vehicle information</h2><div className="form-grid">
  <label>Vehicle category *<select name="category" required defaultValue=""><option value="" disabled>Select category</option>{["Cars","SUVs","Vans","Motorcycles","Three Wheelers","Trucks"].map(x=><option key={x}>{x}</option>)}</select></label>
  <label>Condition *<select name="condition" required defaultValue=""><option value="" disabled>Select condition</option><option>Brand new</option><option>Used</option></select></label>
  <label>Make *<input name="make" required placeholder="e.g. Toyota"/></label><label>Model *<input name="model" required placeholder="e.g. Aqua S"/></label>
@@ -33,6 +33,6 @@ export default function SellPage(){
  </div><h2 className="form-subheading">Seller information</h2><div className="form-grid">
  <label>Your name *<input name="sellerName" required placeholder="Full name"/></label><label>Phone number *<input name="sellerPhone" required type="tel" placeholder="+94 7X XXX XXXX"/></label><label>Email address<input name="sellerEmail" type="email" placeholder="you@example.com"/></label>
  <label>District *<select name="district" required defaultValue=""><option value="" disabled>Select district</option>{["Colombo","Gampaha","Kalutara","Kandy","Galle","Matara","Jaffna","Kurunegala","Anuradhapura","Other"].map(x=><option key={x}>{x}</option>)}</select></label>
- </div><div className="form-actions"><span>Required fields marked *. Demo only — no data is submitted.</span><button className="btn btn-primary" type="submit">Preview listing <ChevronRight size={16}/></button></div></form>}
- <div className="demo-notice"><ImagePlus size={16}/><span>Listings and photos are only previewed in your browser. Connect a backend and secure image storage before launch.</span></div></section>;
+ </div><div className="form-actions"><span>Fields marked * are required.</span><button className="btn btn-primary" type="submit">Preview listing <ChevronRight size={16}/></button></div></form>}
+ <div className="demo-notice"><ImagePlus size={16}/><span>Photos are previewed in your browser. Online listing publication and secure image storage will be available when seller services are connected.</span></div></section>;
 }

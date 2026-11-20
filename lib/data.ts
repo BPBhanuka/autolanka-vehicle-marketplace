@@ -17,9 +17,10 @@ export type Vehicle = {
   engine: string;
   description: string;
   seller: string;
+  sellerRole: string;
 };
 
-// Illustrative images and vehicle details are used for this frontend portfolio concept.
+// Example vehicle listings and seller profiles populate the marketplace experience.
 export const vehicles: Vehicle[] = [
   {
     id: "toyota-aqua-2017",
@@ -39,7 +40,8 @@ export const vehicles: Vehicle[] = [
     condition: "Used",
     engine: "1,500 cc",
     description: "A compact hybrid hatchback with a practical cabin, easy city handling and an efficient everyday driving style. Its small footprint makes it a convenient option for navigating busy streets and fitting into tighter parking spaces.",
-    seller: "Demo seller"
+    seller: "Dinesh Perera",
+    sellerRole: "Private seller"
   },
   {
     id: "toyota-raize-2022",
@@ -59,7 +61,8 @@ export const vehicles: Vehicle[] = [
     condition: "Used",
     engine: "1,000 cc",
     description: "A compact SUV with a raised driving position, versatile cabin and city-friendly dimensions. The practical layout makes it suitable for everyday journeys as well as relaxed weekend travel.",
-    seller: "Demo seller"
+    seller: "Sachini Fernando",
+    sellerRole: "Private seller"
   },
   {
     id: "honda-dio-2022",
@@ -79,7 +82,8 @@ export const vehicles: Vehicle[] = [
     condition: "Used",
     engine: "110 cc",
     description: "A lightweight automatic scooter designed for simple day-to-day commuting. Its step-through design and easy-to-manage size make short town journeys convenient.",
-    seller: "Demo seller"
+    seller: "Tharindu Silva",
+    sellerRole: "Private seller"
   },
   {
     id: "suzuki-every-2020",
@@ -99,7 +103,8 @@ export const vehicles: Vehicle[] = [
     condition: "Used",
     engine: "660 cc",
     description: "A compact passenger van with a tall cabin, sliding side doors and flexible interior space. Its practical shape is useful for family travel, town errands and carrying everyday cargo.",
-    seller: "Demo seller"
+    seller: "Ruwan Jayasuriya",
+    sellerRole: "Private seller"
   },
   {
     id: "honda-fit-2018",
@@ -118,7 +123,8 @@ export const vehicles: Vehicle[] = [
     condition: "Used",
     engine: "1,500 cc",
     description: "A versatile hatchback with a flexible cabin layout and compact exterior dimensions. The hybrid powertrain makes it an appealing option for regular city and suburban driving.",
-    seller: "Demo seller"
+    seller: "Amila Perera",
+    sellerRole: "Private seller"
   },
   {
     id: "yamaha-fz-2021",
@@ -137,7 +143,8 @@ export const vehicles: Vehicle[] = [
     condition: "Used",
     engine: "150 cc",
     description: "A street-style commuter motorcycle with an upright riding position and a purposeful design. It is suited to everyday rides around town and regular longer commutes.",
-    seller: "Demo seller"
+    seller: "Dilan Kumara",
+    sellerRole: "Private seller"
   },
   {
     id: "nissan-van-2019",
@@ -156,7 +163,8 @@ export const vehicles: Vehicle[] = [
     condition: "Used",
     engine: "2,500 cc",
     description: "A spacious passenger van with generous cabin room and a practical layout for group journeys. Its larger body style also offers flexibility for travel and business-related transport.",
-    seller: "Demo seller"
+    seller: "Sanjeewa Fernando",
+    sellerRole: "Private seller"
   },
   {
     id: "suzuki-wagon-r-2021",
@@ -175,7 +183,8 @@ export const vehicles: Vehicle[] = [
     condition: "Used",
     engine: "660 cc",
     description: "A tall, compact hatchback with a roomy feel inside and a small footprint outside. The upright design makes it a practical choice for city driving and everyday errands.",
-    seller: "Demo seller"
+    seller: "Ishara Kumari",
+    sellerRole: "Private seller"
   }
 ];
 

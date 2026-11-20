@@ -1,6 +1,6 @@
-# AutoLanka — Vehicle Marketplace Frontend
+# AutoLanka — Vehicle Marketplace
 
-A responsive vehicle marketplace frontend concept for browsing cars, SUVs, vans and motorcycles in Sri Lanka.
+AutoLanka is a responsive vehicle marketplace frontend concept for browsing cars, SUVs, vans and motorcycles in Sri Lanka.
 
 ## Tech stack
 - Next.js 15 App Router
@@ -19,19 +19,19 @@ A responsive vehicle marketplace frontend concept for browsing cars, SUVs, vans 
 Check a production build with `npm run build`; run ESLint with `npm run lint`.
 
 ## Pages
-- `/` — Homepage, vehicle categories and featured sample listings
+- `/` — Marketplace homepage, categories and featured vehicles
 - `/vehicles` — Search, category, location and price filters, and sorting
-- `/vehicles/[id]` — Vehicle details and specifications
-- `/sell` — Client-side listing form, image validation and local previews
+- `/vehicles/[id]` — Vehicle details, specifications and seller information
+- `/sell` — Vehicle listing form with client-side photo validation and preview
 - `/saved` — Saved vehicles in browser localStorage
-- `/about` — About page
-- `/contact` — Client-side contact form validation demo
+- `/about` — About AutoLanka
+- `/contact` — Contact form and customer support information
 
-## Sample data and images
-Vehicle records in `lib/data.ts` are fictional demonstration data. Vehicle images are illustrative Unsplash photos, not verified photographs of the exact listed vehicles. Seller identities, prices, mileage and descriptions are sample data and have not been independently verified.
+## Example marketplace content
+Vehicle listings, prices, seller profiles, mileage and descriptions are fictional example content created to demonstrate the marketplace experience. Vehicle photos are illustrative Unsplash images and may not show the exact model or condition of the vehicle in a listing. Replace all sample listing and seller information with verified data before using the platform for actual transactions. The `.example` email address is reserved for documentation and is not a working support mailbox.
 
-## Frontend-only limitations
-This repository is a frontend portfolio concept. It does not include authentication, a database, real seller listings, server-side listing submissions, persistent photo hosting, email delivery, payments or transaction processing. Saved vehicles use browser localStorage. The sell form validates and previews data in the browser only; the contact form does not send messages. Add a backend, secure image storage, verified contact channels and appropriate validation before production use.
+## Current implementation scope
+This repository contains the frontend experience. Search, filters, sorting, saved vehicles, form validation and local photo previews run in the browser. Authentication, database persistence, seller registration, live listing publication, secure image storage, email delivery and payments are not connected yet. Saved vehicles use browser localStorage. The sell form validates and previews data in the browser only; the contact form prepares inquiry details but does not deliver messages. Add backend services and verify all business details before production use.
 
 ## Design and source
 - Figma: https://www.figma.com/design/9WOGboaOe3Oyzqe8Eviu0R
